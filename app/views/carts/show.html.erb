@@ -1,0 +1,9 @@
+Nombre de produit selectionnés : <%= @cart.line_items.count %><br>
+
+<div class="row">
+  <div class="col-3">
+    <%= render(@cart.line_items) %>
+  </div>
+</div>
+
+<%= link_to 'Retour aux produits', products_path %>
