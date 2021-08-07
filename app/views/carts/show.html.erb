@@ -6,4 +6,6 @@ Nombre de produit selectionnés : <%= @cart.line_items.count %><br>
   </div>
 </div>
 
+<%= link_to 'Vider le panier', @cart, method: :delete %>
+
 <%= link_to 'Retour aux produits', products_path %>

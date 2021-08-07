@@ -3,10 +3,13 @@ module CurrentCart
   private
 
   def set_current_cart
-    @cart = Cart.find(session[:cart_id])
-  rescue ActiveRecord::RecordNotFound
-    @cart = Cart.create
-    session[:cart_id] = @cart.id
+    return unless current_user
+
+    if !current_user.cart.present?
+      @cart = Cart.create(user_id: current_user.id)
+    else
+      @cart = Cart.find_by(user_id: current_user.id)
+    end
   end
   
 end

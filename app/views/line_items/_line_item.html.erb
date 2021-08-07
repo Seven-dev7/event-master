@@ -4,4 +4,6 @@
       <h5 class="card-title"><%= line_item.total_price %> €</h5>
       <p class="card-text"><%= line_item.product.description %>.</p>
     </div>
-  </div>
+  </div><br>
+
+<%= link_to 'Retirer du panier', line_item, method: :delete, data: {confirm: "Etes vous sur ? "} %>

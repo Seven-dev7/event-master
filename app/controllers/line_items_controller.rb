@@ -52,10 +52,10 @@ class LineItemsController < ApplicationController
 
   # DELETE /line_items/1 or /line_items/1.json
   def destroy
-    @cart = Cart.find(session[:cart_id])
+    @cart = Cart.find(current_user.cart.id)
     @line_item.destroy
     respond_to do |format|
-      format.html { redirect_to cart_path(@cart), notice: "Line item was successfully destroyed." }
+      format.html { redirect_to cart_path(@cart), notice: "Le produit a bien été supprimé du panier." }
       format.json { head :no_content }
     end
   end
