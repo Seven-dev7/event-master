@@ -37,6 +37,8 @@ group :development, :test do
   gem 'better_errors', '~> 2.9', '>= 2.9.1'
   gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
   gem 'factory_bot_rails', '~> 6.2'
+  gem 'ffaker', '~> 2.18'
+  gem 'shoulda-matchers', '~> 5.0'
 end
 
 group :development do
